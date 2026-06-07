@@ -22,6 +22,7 @@ HTML5
 CSS3
 JavaScript
 Project Structure
+
 Portfolio Website/
 │
 ├── index.html
@@ -31,6 +32,7 @@ Portfolio Website/
 ├── images/
 ├── pdf/
 └── project-template.html
+
 Current Status
 
 This repository contains the completed portfolio website and all implemented work processes.
