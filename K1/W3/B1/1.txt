@@ -1,0 +1,75 @@
+Belangrijke dingen heb ik extra comments geschreven zodat iedereen
+ongeveer weet wat alles doet.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Home</title>
+
+    <!-- Koppelt de algemene styling en de specifieke styling voor de homepage -->
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Verbindingen voor Google Fonts en FontAwesome iconen -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="main-content">
+
+    <!-- De header bevat de visuele introductie van de pagina -->
+
+    <header class="container header">
+        <div class="header-content">
+
+            <!-- Linkerkant: Bevat de decoratieve vorm (h-shape) en de profielfoto -->
+
+            <div class="left-header">
+                <div class="h-shape"></div>
+                <div class="image">
+                    <img src="img/Constantijn.png" alt="">
+                </div>
+            </div>
+
+            <!-- Rechterkant: Bevat de begroeting, naam, functie en introductietekst -->
+
+            <div class="right-header">
+                <h1 class="name">
+                    Hallo, Ik ben <span> Constantijn Leers.</span>
+                    Een Software developer.
+                </h1>
+                <p>
+                    Welkom op mijn informatiewebsite.
+                    Op deze website kun je verschillende dingen over mij vinden, zoals mijn socialemediaplatforms, mijn curriculum vitae en mijn e-mailadres.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigatiemenu: De knoppen om naar andere pagina's te gaan. 'active-btn' geeft de huidige pagina aan -->
+
+    <nav class="controls">
+        <a href="index.html" class="control active-btn"><i class="fas fa-home"></i></a>
+        <a href="about.html" class="control"><i class="fas fa-user"></i></a>
+        <a href="portfolio.html" class="control"><i class="fas fa-briefcase"></i></a>
+        <a href="contact.html" class="control"><i class="fas fa-envelope-open"></i></a>
+    </nav>
+
+    <!-- Thema-knop: Hiermee kan de gebruiker wisselen tussen de lichte en donkere modus -->
+
+    <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div>
+
+    <!-- Koppelt het JavaScript-bestand dat de navigatie en thema-wissel regelt -->
+
+    <script src="app.js"></script>
+</body>
+</html>

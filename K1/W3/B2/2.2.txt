@@ -1,0 +1,103 @@
+<?php
+// PHP-sessies zijn essentieel voor inloggen. 
+// Het is een digitaal 'paspoort' dat wordt aangemaakt zodra de gebruiker inlogt, 
+// zodat de server op de volgende pagina's weet: "Ja, deze persoon mag hier zijn."
+session_start(); 
+
+// Dit haalt de 'stekkerdoos' op (db.php). Zonder dit bestand kan deze pagina 
+// niet praten met de database waar de wachtwoorden in staan.
+require_once 'db.php'; 
+
+$error = ''; // Een leeg bakje waar we een foutmelding in stoppen als er iets misgaat.
+
+// Deze check kijkt of er daadwerkelijk op de 'Inloggen' knop is gedrukt.
+// Zo niet, dan doet PHP niets en laat hij gewoon het formulier zien.
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email']); // Pakt het mailadres en haalt per ongeluk getypte spaties weg.
+    $password = $_POST['password']; // Pakt het wachtwoord dat is ingevuld.
+
+    // --- VEILIGHEIDSCHECK ---
+    // Hier controleert PHP of het mailadres wel echt een mailadres is (bevat het een @?).
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Voer een geldig e-mailadres in.";
+    } else {
+        // --- DE DATABASE DOORZOEKEN ---
+        // We sturen een vraag naar de database: "Bestaat er een admin met dit mailadres?"
+        // De '?' is een beveiligingstactiek (Prepared Statement). Het zorgt ervoor dat 
+        // hackers geen eigen computercodes naar je database kunnen sturen via het invulveld.
+        $stmt = $pdo->prepare("SELECT * FROM admins WHERE email = ?");
+        $stmt->execute([$email]); 
+        $admin = $stmt->fetch(); // PHP haalt nu alle gegevens van die admin op (inclusief het wachtwoord).
+
+        // Hier wordt de 'sleutel' gecontroleerd.
+        // Bestaat de admin? En is het ingevulde wachtwoord hetzelfde als in de database?
+        if ($admin && $password === $admin['password']) {
+            // LOGIN GELUKT: We geven de gebruiker een digitale 'stempel'.
+            $_SESSION['admin_logged_in'] = true; 
+            $_SESSION['admin_email'] = $admin['email']; 
+            
+            // De gebruiker wordt nu automatisch doorgestuurd naar het beveiligde dashboard.
+            header("Location: admin.php"); 
+            exit; 
+        } else {
+            // LOGIN MISLUKT: We vullen het fout-bakje met tekst.
+            $error = "Onjuiste inloggegevens.";
+        }
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <a href="index.php" style="text-decoration:none; color:var(--primary-color);">← Terug naar Home</a>
+</nav>
+
+<div class="container" style="max-width: 400px;">
+    <h2>Admin Login</h2>
+    
+    <!-- PHP BERICHT:
+         Alleen als de variabele $error tekst bevat, laat PHP dit rode blokje zien. -->
+    <?php if($error): ?>
+        <div class="message error"><?php echo $error; ?></div>
+    <?php endif; ?>
+
+    <form action="login.php" method="POST" id="loginForm">
+        <div class="form-group">
+            <label for="email">E-mailadres</label>
+            <!-- type="email" geeft een melding in de browser als je het @-teken vergeet -->
+            <input type="email" id="email" name="email" required placeholder="admin@bedrijf.nl">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Wachtwoord</label>
+            <!-- type="password" zorgt ervoor dat de letters in bolletjes veranderen -->
+            <input type="password" id="password" name="password" required placeholder="Wachtwoord">
+        </div>
+
+        <button type="submit" style="width: 100%;">Inloggen</button>
+    </form>
+</div>
+
+<script>
+    // DE JAVASCRIPT CHECK:
+    // Dit is de eerste beveiligingslinie. Voordat de server überhaupt wordt 
+    // aangeroepen, checkt deze code op je eigen computer of het formulier compleet is.
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        const email = document.getElementById('email').value;
+        if(!email.includes('@')) {
+            alert("Ongeldig emailadres. Een @ is verplicht.");
+            e.preventDefault(); // Stopt het verzenden (het formulier gaat niet weg)
+        }
+    });
+</script>
+
+</body>
+</html>

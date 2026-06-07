@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="/project-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="main-content">
+    <section class="container">
+        <div class="main-title">
+            <h2><span>B1-K1-W2</span> Bewijsstuk 2</h2>
+        </div>
+
+        <div class="detail-container">
+            <!-- Text Section -->
+            <div class="text-content">
+                <h3>ERD en Use-case Stage opdracht</h3>
+                <br>
+                <p>Tijdens het maken van mijn stage opdracht heb ik een ERD en Use-case gemaakt.</p>
+            </div>
+            <br>
+            <!-- Pictures Section -->
+            <div class="image-gallery">
+                 <h3>ERD</h3>
+                 <br>
+                 <p>
+                    Hieronder is een ERD (Entity Relationship Diagram) van de database-architectuur voor dit project. Hierin heb ik de entiteiten gebruikt die noodzakelijk zijn om de ingevulde gegevens en de beheerdersaccounts structureel op te slaan. Zoals te zien is, heb ik een overzicht geschetst van de twee hoofdtabelstructuren binnen de survey_db.
+
+De eerste entiteit die ik heb gemaakt is de responses tabel. Deze fungeert als het hart van de dataverzameling en bevat de volgende informatie:
+
+id: Een uniek volgnummer (Primary Key) voor elke inzending.
+name: De naam van de persoon die de lijst invult.
+phone: Het telefoonnummer van de respondent.
+department: De afdeling waar de betreffende persoon werkzaam is.
+created_at: Een automatische tijdstempel om bij te houden wanneer de antwoorden zijn verzonden.
+De tweede entiteit is de admins tabel. Deze is specifiek ingericht voor de beveiligingsfunctionaliteit en bevat de volgende informatie:
+
+id: De unieke identifier voor de beheerder.
+email: Het e-mailadres dat wordt gebruikt als gebruikersnaam (met de verplichte "@" check in de logica).
+password: Het wachtwoord, welke in de database versleuteld (gehashed) wordt opgeslagen voor de veiligheid.
+Zoals je kunt zien in het diagram, is er een conceptuele relatie waarbij de Admin-entiteit de data uit de Responses-entiteit ontsluit. De tabellen zijn zo ontworpen dat ze schaalbaar zijn en direct gekoppeld kunnen worden via de PHP PDO-verbinding. Deze ERD heeft mij veel geholpen om een goed beeld te krijgen van de benodigde datatypes en hoe de database-koppeling in de code moet gaan werken.
+                 </p>
+                <img src="/K1/W2/B2/ERD Test.png" alt="Gallery Image 1">
+                <br>
+                <h3>Use-Case</h3>
+                <br>
+                <p>
+Hieronder is een use case diagram van het Survey Management Systeem. Hierin heb ik de toepassing van de vragenlijst en het admin-beheer als hoofdobject gebruikt en de volgende actors gedefinieerd:
+
+Gebruiker (de respondent)
+Admin (de beheerder)
+Ik heb hierin de use cases gebruikt die essentieel zijn voor de interactie tussen de gebruiker, de beheerder en de database. Zoals te zien is heb ik de UML-standaard gebruikt voor het maken van dit diagram, de use cases zijn als volgt:
+
+Vragenlijst invullen: De primaire interactie voor de bezoeker op de homepagina.
+Antwoorden verzenden: De technische afhandeling waarbij data naar de database wordt gepusht.
+Inloggen: De beveiligde toegangspoort voor de beheerder.
+Resultaten inzien: De functionele weergave van alle opgeslagen data in het dashboard.
+Uitloggen: Het veilig beëindigen van de beheersessie.
+Daarnaast heb ik bij de use case "Inloggen" een specifieke validatie-check meegenomen. Hierbij wordt gecontroleerd of het ingevoerde e-mailadres een "@" bevat, wat dient als een eerste laag van cybersecurity en data-integriteit. De beheerder heeft exclusieve toegang tot de use cases voor het inzien van resultaten, wat de scheiding tussen publieke functies en administratieve rechten waarborgt. Dit use case diagram heeft mij veel geholpen om een goed beeld te krijgen van de gebruikersstromen en de functionele vereisten van de applicatie.
+                </p>
+                <br>
+                <img src="/K1/W2/B2/Use-Case Test.png" alt="Gallery Image 2">
+            </div>
+    </section>
+
+    <!-- Navigation (Same as other pages) -->
+    <nav class="controls">
+        <a href="/index.html" class="control"><i class="fas fa-home"></i></a>
+        <a href="/about.html" class="control"><i class="fas fa-user"></i></a>
+        <a href="/portfolio.html" class="control active-btn"><i class="fas fa-briefcase"></i></a>
+        <a href="/contact.html" class="control"><i class="fas fa-envelope-open"></i></a>
+    </nav>
+    <div class="theme-btn"><i class="fas fa-adjust"></i></div>
+    <script src="app.js"></script>
+</body>
+</html>

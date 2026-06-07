@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+
+    <!-- Koppelt de basisstijlen en de specifieke styling voor de contactpagina -->
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="contact.css">
+
+    <!-- Importeert FontAwesome voor de contact-iconen en Google Fonts voor de tekststijl -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+
+<body class="main-content">
+    <section class="container contact">
+
+        <!-- Hoofdtitel van de pagina met 'bg-text' voor het grote transparante effect op de achtergrond -->
+
+        <div class="main-title">
+            <h2>Contacteer <span>Mij</span><span class="bg-text">Contacteer</span></h2>
+        </div>
+        
+        <div class="contact-content-con">
+
+            <!-- Linkerkant: Bevat de directe contactgegevens zoals adres en e-mail -->
+
+            <div class="left-contact">
+                <h4>Contacteer me hier</h4>
+                <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+                
+                <div class="contact-info">
+
+                    <!-- Elk 'contact-item' combineert een icoon met een specifiek gegeven -->
+
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Woonplaats</span>
+                        </div>
+                        <p>Kerkrade</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                            <span>E-mail</span>
+                        </div>
+                        <p><span>512376@vistacollege.nl</span></p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>Educatie</span>
+                        </div>
+                        <p><span>Vista College Heerlen</span></p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">
+                            <i class="fas fa-globe-africa"></i>
+                            <span>Taal</span>
+                        </div>
+                        <p><span>Nederlands</span></p>
+                    </div>
+                </div>
+
+                <!-- Sectie voor social media iconen (momenteel gereserveerd voor links) -->
+
+                <div class="contact-icons">
+                    <div class="contact-icon">
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rechterkant: Bevat het contactformulier zodat bezoekers direct een bericht kunnen sturen -->
+
+            <div class="right-contact">
+                <form action="" class="contact-form">
+
+                    <!-- 'i-c-2' zorgt er in CSS vaak voor dat Naam en Email naast elkaar staan op desktop -->
+
+                    <div class="input-control i-c-2">
+                        <input type="text" required placeholder="YOUR NAME">
+                        <input type="email" required placeholder="YOUR EMAIL">
+                    </div>
+                    <div class="input-control">
+                        <input type="text" required placeholder="ENTER SUBJECT">
+                    </div>
+                    <div class="input-control">
+                        <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                    </div>
+                    <!-- De verzendknop met een icoon erin verwerkt -->
+                    <div class="submit-btn">
+                        <button type="submit" class="main-btn" style="background: none; cursor: pointer;">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigatiemenu aan de zijkant/onderkant. De 'active-btn' geeft de huidige pagina aan -->
+
+    <nav class="controls">
+        <a href="index.html" class="control"><i class="fas fa-home"></i></a>
+        <a href="about.html" class="control"><i class="fas fa-user"></i></a>
+        <a href="portfolio.html" class="control"><i class="fas fa-briefcase"></i></a>
+        <a href="contact.html" class="control active-btn"><i class="fas fa-envelope-open"></i></a>
+    </nav>
+
+    <!-- Knop voor het wisselen tussen Dark Mode en Light Mode via JavaScript -->
+
+    <div class="theme-btn"><i class="fas fa-adjust"></i></div>
+
+    <!-- Koppeling naar het script voor de interactiviteit van de knoppen en thema's -->
+    
+    <script src="app.js"></script>
+</body>
+</html>

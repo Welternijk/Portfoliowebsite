@@ -1,0 +1,172 @@
+Belangrijke dingen heb ik extra comments geschreven zodat iedereen
+ongeveer weet wat alles doet.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - About</title>
+
+    <!-- Koppelt de algemene styling (base.css) en de specifieke styling voor deze pagina (about.css) -->
+
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="about.css">
+
+    <!-- Importeert FontAwesome voor de iconen (zoals het huisje, envelopje, etc.) -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Importeert het 'Poppins' lettertype van Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+
+
+<body class="main-content">
+    <section class="container about">
+
+        <!-- De hoofdtitel bovenaan de pagina. De span met 'bg-text' zorgt voor de grote transparante letters op de achtergrond -->
+
+        <div class="main-title">
+            <h2>Constantijn <span>Leers</span><span class="bg-text">Over Mij</span></h2>
+        </div>
+
+        <div class="about-container">
+
+            <!-- Linkerkant van de 'About' sectie: Hier staat me persoonlijke introductie -->
+
+            <div class="left-about">
+                <h4>Informatie over mij</h4>
+                <p>
+                    Mijn naam is Constantijn Leers. Ik ben een gedreven software developer in opleiding aan het Vista College. 
+                    Ik hou ervan om complexe problemen op te lossen en nieuwe technologieën te leren om moderne webapplicaties te bouwen.
+                </p>
+
+
+            <!-- Rechterkant: Een grid van blokken met snelle cijfers/statistieken over mijn ervaring -->
+
+            <div class="right-about">
+                <div class="about-item">
+                    <div class="abt-text">
+                        <p class="large-text">10+</p>
+                        <p class="small-text">Projecten <br /> Afgerond</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="abt-text">
+                        <p class="large-text">2+</p>
+                        <p class="small-text">Jaar <br /> Ervaring</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="abt-text">
+                        <p class="large-text">5+</p>
+                        <p class="small-text">Tevreden <br /> Gebruikers</p>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="abt-text">
+                        <p class="large-text">100%</p>
+                        <p class="small-text">Inzet <br /> & Passie</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- De vaardigheden sectie: Hier worden me skills getoond met bewegende balken -->
+
+        <div class="about-stats">
+            <h4 class="stat-title">Mijn vaardigheden</h4>
+            <div class="progress-bars">
+                <!-- Elk 'progress-bar' blok bevat een titel en een container voor de balk zelf -->
+                <div class="progress-bar">
+                    <p class="prog-title">HTML5</p>
+                    <div class="progress-con">
+                        <p class="prog-text">90%</p>
+                        <!-- De class in de span (bijv. 'html') bepaalt in de CSS hoe ver de balk vult -->
+                        <div class="progress"><span class="html"></span></div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <p class="prog-title">CSS3</p>
+                    <div class="progress-con">
+                        <p class="prog-text">80%</p>
+                        <div class="progress"><span class="css"></span></div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <p class="prog-title">JavaScript</p>
+                    <div class="progress-con">
+                        <p class="prog-text">75%</p>
+                        <div class="progress"><span class="js"></span></div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <p class="prog-title">PHP</p>
+                    <div class="progress-con">
+                        <p class="prog-text">70%</p>
+                        <div class="progress"><span class="php"></span></div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <p class="prog-title">Python</p>
+                    <div class="progress-con">
+                        <p class="prog-text">65%</p>
+                        <div class="progress"><span class="python"></span></div>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <p class="prog-title">Behulpzaamheid</p>
+                    <div class="progress-con">
+                        <p class="prog-text">95%</p>
+                        <div class="progress"><span class="helpful"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tijdlijn sectie: Hier staan me werkervaring en opleidingen onder elkaar -->
+
+
+        <h4 class="stat-title">Opleidingen / Werkervaring</h4>
+        <div class="timeline">
+
+            <!-- Elk 'timeline-item' is één punt op de tijdlijn met een eigen icoon -->
+
+            <div class="timeline-item">
+                <div class="tl-icon"><i class="fas fa-briefcase"></i></div>
+                <p class="tl-duration">Aug 2022 - Heden</p>
+                <h5>Software Developer MBO4<span> - Vista college</span></h5>
+                <p>Het leren bouwen van applicaties, werken met databases en Agile methodieken zoals Scrum.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="tl-icon"><i class="fas fa-graduation-cap"></i></div>
+                <p class="tl-duration">2018 - 2022</p>
+                <h5>Middelbare School<span> - Diploma behaald</span></h5>
+                <p>Mijn voorbereidende traject afgerond om te kunnen starten met mijn huidige software studie.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- De zwevende zij-navigatie. De 'active-btn' class geeft aan op welke pagina je nu bent -->
+
+    <nav class="controls">
+        <a href="index.html" class="control" data-id="home"><i class="fas fa-home"></i></a>
+        <a href="about.html" class="control active-btn" data-id="about"><i class="fas fa-user"></i></a>
+        <a href="portfolio.html" class="control" data-id="portfolio"><i class="fas fa-briefcase"></i></a>
+        <a href="contact.html" class="control" data-id="contact"><i class="fas fa-envelope-open"></i></a>
+    </nav>
+
+    <!-- De thema-knop rechtsboven voor het wisselen tussen Dark Mode en Light Mode -->
+
+    <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div>
+    
+    <!-- Link naar je JavaScript bestand voor de interactie (zoals het wisselen van thema) -->
+    
+    <script src="app.js"></script>
+</body>
+</html>

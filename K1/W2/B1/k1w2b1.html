@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="/project-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="main-content">
+    <section class="container">
+        <div class="main-title">
+            <h2><span>B1-K1-W2</span> Bewijsstuk 1</h2>
+        </div>
+
+        <div class="detail-container">
+            <!-- Text Section -->
+            <div class="text-content">
+                <h3>ERD en Use-case Stage opdracht</h3>
+                <br>
+                <p>Tijdens het maken van mijn stage opdracht heb ik een ERD en Use-case gemaakt.</p>
+            </div>
+            <br>
+            <!-- Pictures Section -->
+            <div class="image-gallery">
+                 <h3>ERD</h3>
+                 <br>
+                 <p>Hieronder is een ERD van de data-architectuur van het MyFeedback websysteem. Hierin heb ik de entiteiten gebruikt die de kern vormen van de feedback- en onderwijsadministratie binnen de applicatie. Zoals te zien is, heb ik een overzicht geschetst van de "User" als centraal object en de relaties met de overige entiteiten, deze relaties zijn:
+User > Feedback: Een student of docent is gekoppeld aan feedbackmomenten (student_id / teacher_id).
+Feedback > Comment: Bevat tekstuele reacties die gekoppeld zijn aan een specifiek feedback-id.
+Lesson > Studyprogram: Koppeling van een specifieke les aan een breder onderwijsprogramma.
+Form > Question: Een relatie waarbij een formulier fungeert als container voor meerdere specifieke vragen.
+Survey > Lesson/Form: Een enquête die wordt uitgezet voor een specifieke les op basis van een gekozen formulier-template.</p>
+                <img src="/K1/W2/B1/ERD stage project.png" alt="Gallery Image 1">
+                <br>
+                <h3>Use-Case</h3>
+                <br>
+                <p>
+Hieronder is een use case diagram van het MyFeedback websysteem. Hierin heb ik de toepassing MyFeedback als hoofdobject gebruikt en de Student, Teacher, Opleidingsmanager en Systeembeheerder als actoren. Ik heb hierin alle functionele use cases opgenomen die de interactie tussen de gebruikers en het systeem beschrijven. Zoals te zien is heb ik de UML-standaard gebruikt voor het maken van dit diagram, de use cases zijn als volgt:
+
+Feedback toevoegen: De kernfunctionaliteit voor de student.
+Lesson toevoegen: Een functionaliteit die de use case 'Feedback toevoegen' extend.
+Comment beheren: Toegankelijk voor de student, docent en manager.
+Formulier beheren: Waarbij de use case 'Vraag beheren' is opgenomen als een include.
+Enquête & Les beheren: Specifieke beheertaken voor de docent en opleidingsmanager.
+Het standaardformulier selecteren: Een taak specifiek voor de opleidingsmanager om consistentie te waarborgen.
+Opleiding beheren: De overkoepelende beheerstaak voor de systeembeheerder.
+Dit diagram geeft een helder overzicht van hoe de verschillende rollen binnen het systeem samenwerken om het feedbackproces te faciliteren.
+                </p>
+                <br>
+                <img src="/K1/W2/B1/Use-case stage opdracht.png" alt="Gallery Image 2">
+            </div>
+    </section>
+
+    <!-- Navigation (Same as other pages) -->
+    <nav class="controls">
+        <a href="/index.html" class="control"><i class="fas fa-home"></i></a>
+        <a href="/about.html" class="control"><i class="fas fa-user"></i></a>
+        <a href="/portfolio.html" class="control active-btn"><i class="fas fa-briefcase"></i></a>
+        <a href="/contact.html" class="control"><i class="fas fa-envelope-open"></i></a>
+    </nav>
+    <div class="theme-btn"><i class="fas fa-adjust"></i></div>
+    <script src="app.js"></script>
+</body>
+</html>

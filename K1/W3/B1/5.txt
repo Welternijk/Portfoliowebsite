@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Project Details</title>
+    <link rel="stylesheet" href="base.css">
+
+    <!-- De 'project-detail.css' bevat de specifieke styling voor de grid-indeling van de foto's en de PDF-viewer -->
+
+    <link rel="stylesheet" href="project-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body class="main-content">
+    <section class="container">
+        <div class="main-title">
+            <h2>Project <span>Detail</span></h2>
+        </div>
+
+        <div class="detail-container">
+            
+            <!-- In de 'text-content' kun je de diepte in gaan over het project (doel, technieken, resultaat) -->
+
+            <div class="text-content">
+                <h3>Project Overview</h3>
+                <p>loermp test dit is gewoon text uiteindelijk aanpassen</p>
+            </div>
+
+            <!-- De gallery is vaak een flexbox of grid; zorg dat de foto's een 'alt' tekst hebben voor betere vindbaarheid -->
+
+            <div class="image-gallery">
+                <img src="img/detail-1.jpg" alt="Gallery Image 1">
+                <img src="img/detail-2.jpg" alt="Gallery Image 2">
+            </div>
+
+            <!-- De PDF-sectie: De 'embed' tag zorgt ervoor dat de PDF direct leesbaar is zonder dat de bezoeker je site hoeft te verlaten -->
+
+            <div class="pdf-section">
+                <h3>Documentation (PDF)</h3>
+                <div class="pdf-container">
+                    <embed src="files/your-document.pdf" type="application/pdf" width="100%" height="600px" />
+                </div>
+                
+                <!-- Een aparte downloadknop is een 'fallback' voor het geval de browser de PDF niet direct kan laden -->
+
+                <a href="files/your-document.pdf" download class="main-btn">
+                    <span class="btn-text">Download PDF</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <nav class="controls">
+        <a href="index.html" class="control"><i class="fas fa-home"></i></a>
+        <a href="about.html" class="control"><i class="fas fa-user"></i></a>
+        
+        <!-- De 'active-btn' klasse staat hier op Portfolio omdat deze detailpagina onderdeel is van je werkervaring -->
+
+        <a href="portfolio.html" class="control active-btn"><i class="fas fa-briefcase"></i></a>
+    </nav>
+
+    <!-- De thema-knop en het script zorgen voor de overgang tussen dark mode en light mode op de hele site -->
+    
+    <div class="theme-btn"><i class="fas fa-adjust"></i></div>
+    <script src="app.js"></script>
+</body>
+</html>
