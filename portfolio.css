@@ -1,0 +1,89 @@
+.category-title {
+    font-size: 2.2rem;
+    color: var(--color-white);
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-blue);
+    display: inline-block;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+}
+
+.work-card {
+    background-color: #0d1117; /* Darkest Navy */
+    border: 1px solid #30363d;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.card-label {
+    color: #8b949e;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.card-id {
+    color: #2f81f7; /* Bright Blue */
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.card-desc {
+    color: #c9d1d9;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.proof-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.proof-btn {
+    background-color: #21262d;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 130px;
+    transition: all 0.3s ease;
+    border: 1px solid #30363d;
+}
+
+.proof-btn i {
+    font-size: 0.75rem;
+    margin-left: 10px;
+    color: #8b949e;
+}
+
+/* Hover State - Only the button changes */
+.proof-btn:hover {
+    background-color: #2f81f7;
+    border-color: #2f81f7;
+    transform: translateY(-2px);
+}
+
+.proof-btn:hover i {
+    color: #ffffff;
+}
+
+/* Responsive adjustment */
+@media screen and (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+}
