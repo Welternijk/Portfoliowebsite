@@ -1,0 +1,34 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // toggelen van logics
+    const themeBtn = document.querySelector(".theme-btn");
+    
+    // kijkt of er al eerder een keuze was gemaakt
+    const currentTheme = localStorage.getItem("portfolio-theme");
+    if (currentTheme === "light") {
+        document.body.classList.add("light-mode");
+    }
+
+    // light of donker knop
+    if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+            
+            // keuze bewaren anders terug
+            if (document.body.classList.contains("light-mode")) {
+                localStorage.setItem("portfolio-theme", "light");
+            } else {
+                localStorage.setItem("portfolio-theme", "dark");
+            }
+        });
+    }
+
+    // Validatie voor contact pagina ( werkt niet echt maar wel dat je tezien krijgt dat het een simulatie is)
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Bedankt! Uw bericht is verzonden (simulatie).');
+            contactForm.reset();
+        });
+    }
+});
